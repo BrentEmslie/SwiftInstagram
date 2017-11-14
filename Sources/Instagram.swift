@@ -15,7 +15,7 @@ public class Instagram {
     // MARK: - Types
 
     public typealias EmptySuccessHandler = () -> Void
-    public typealias SuccessHandler<T> = (_ data: T, _ pagaintion: String?) -> Void
+    public typealias SuccessHandler<T> = (_ data: T, _ nextMaxId: String?) -> Void
     public typealias FailureHandler = (_ error: InstagramError) -> Void
 
     typealias Parameters = [String: Any]
