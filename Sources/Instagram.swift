@@ -15,7 +15,7 @@ public class Instagram {
     // MARK: - Types
 
     public typealias EmptySuccessHandler = () -> Void
-    public typealias SuccessHandler<T> = (_ data: T) -> Void
+    public typealias SuccessHandler<T> = (_ data: T, _ pagaintion: String?) -> Void
     public typealias FailureHandler = (_ error: InstagramError) -> Void
 
     typealias Parameters = [String: Any]
@@ -155,7 +155,7 @@ public class Instagram {
                             }
                         } else {
                             DispatchQueue.main.async {
-                                success?(object.data!)
+                                success?(object.data!, object.pagination?.nextMaxId)
                             }
                         }
                     } catch {

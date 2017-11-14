@@ -31,7 +31,7 @@ extension Instagram {
     ///   to your own user.
 
     public func like(media mediaId: String, failure: FailureHandler?) {
-        request("/media/\(mediaId)/likes", method: .post, success: { (_: InstagramResponse<Any?>) in return }, failure: failure)
+        request("/media/\(mediaId)/likes", method: .post, success: { (_: InstagramResponse<Any?>,_) in return }, failure: failure)
     }
 
     /// Remove a like on this media by the currently authenticated user.
@@ -43,7 +43,7 @@ extension Instagram {
     ///   to your own user.
 
     public func unlike(media mediaId: String, failure: FailureHandler?) {
-        request("/media/\(mediaId)/likes", method: .delete, success: { (_: InstagramResponse<Any?>) in return }, failure: failure)
+        request("/media/\(mediaId)/likes", method: .delete, success: { (_: InstagramResponse<Any?>,_) in return }, failure: failure)
     }
 
 }

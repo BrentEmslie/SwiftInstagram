@@ -42,7 +42,7 @@ extension Instagram {
 
         parameters["text"] = text
 
-        request("/media/\(mediaId)/comments", method: .post, parameters: parameters, success: { (_: InstagramResponse<Any?>) in return }, failure: failure)
+        request("/media/\(mediaId)/comments", method: .post, parameters: parameters, success: { (_: InstagramResponse<Any?>,_) in return }, failure: failure)
     }
 
     /// Remove a comment either on the authenticated user's media object or authored by the authenticated user.
@@ -55,7 +55,7 @@ extension Instagram {
     ///   belong to your own user.
 
     public func deleteComment(_ commentId: String, onMedia mediaId: String, failure: FailureHandler?) {
-        request("/media/\(mediaId)/comments/\(commentId)", method: .delete, success: { (_: InstagramResponse<Any?>) in return }, failure: failure)
+        request("/media/\(mediaId)/comments/\(commentId)", method: .delete, success: { (_: InstagramResponse<Any?>,_) in return }, failure: failure)
     }
 
 }
